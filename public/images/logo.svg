@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+<g transform="translate(8,12) scale(1.5)">
+<defs><linearGradient id="lm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0878E8"/><stop offset="1" stop-color="#082B70"/></linearGradient></defs>
+<rect width="64" height="64" rx="16" fill="url(#lm)"/>
+<g stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none">
+<path d="M32 12v40M14.7 22l34.6 20M14.7 42l34.6-20"/>
+<path d="M26 16l6 6 6-6M26 48l6-6 6 6"/></g>
+<circle cx="50" cy="14" r="6" fill="#EF3340" stroke="#fff" stroke-width="2"/></g>
+<text x="128" y="62" font-family="DejaVu Sans, Arial" font-weight="700" font-size="40" fill="#082B70">RK COOL TECH</text>
+<text x="130" y="96" font-family="DejaVu Sans, Arial" font-weight="700" font-size="20" letter-spacing="9" fill="#0878E8">SERVICES</text>
+</svg>

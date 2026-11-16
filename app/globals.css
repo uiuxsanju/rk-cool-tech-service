@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./site.css";
+
+@theme {
+  --font-sans: var(--font-body), "DM Sans", system-ui, sans-serif;
+  --color-ink: oklch(23% 0.035 252);
+  --color-navy: oklch(54.11% 0.1185 250.44);
+}
