@@ -9,6 +9,7 @@ export const BUSINESS = {
   phoneShort: "90006 26018",
   tel: "+919000626018",
   wa: "919000626018",
+  email: "acservicevizag.in@gmail.com",
   street: "RTC Complex, Dwaraka Nagar",
   area: "Dwaraka Nagar",
   city: "Visakhapatnam",
@@ -20,6 +21,7 @@ export const BUSINESS = {
 /** Main location – Google Maps search link for RTC Complex, Dwaraka Nagar. */
 export const MAPS_HREF = "https://www.google.com/maps/search/?api=1&query=RTC+Complex+Dwaraka+Nagar+Visakhapatnam";
 
+export const MAIL_HREF = "mailto:acservicevizag.in@gmail.com";
 export const TEL_HREF = `tel:${BUSINESS.tel}`;
 
 export const waHref = (message = "Hi AC Service Vizag, I would like to book a service in Vizag.") =>

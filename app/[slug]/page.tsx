@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import { SERVICES, getService } from "@/lib/content";
+import { BRANDS, SERVICES, getService } from "@/lib/content";
 import { servicePath, waHref } from "@/lib/site";
 import { serviceGraph } from "@/lib/schema";
+import { AREA_PAGES, getAreaPage } from "@/lib/areas";
+import { SERVICE_KEYWORDS } from "@/lib/keywords";
+import { AreaLanding, areaMetadata } from "@/components/AreaLanding";
 import { AppIcon, WhatsAppIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { LogoStamp } from "@/components/LogoStamp";
@@ -14,22 +17,27 @@ import {
   SplitHeading, WhatsAppButton,
 } from "@/components/blocks";
 
+const AC_BRAND_SLUGS = ["lg", "samsung", "voltas", "daikin", "whirlpool", "blue-star", "hitachi", "carrier", "panasonic", "haier", "godrej", "lloyd"];
+
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return SERVICES.map((s) => ({ slug: s.slug }));
+  return [...SERVICES.map((s) => ({ slug: s.slug })), ...AREA_PAGES.map((a) => ({ slug: a.slug }))];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const area = getAreaPage(slug);
+  if (area) return areaMetadata(area);
   const s = getService(slug);
   if (!s) return {};
   const path = servicePath(s.slug);
   return {
     title: { absolute: s.title },
     description: s.desc,
+    keywords: SERVICE_KEYWORDS[s.slug],
     alternates: { canonical: path },
     openGraph: { title: s.title, description: s.desc, url: path, images: [{ url: s.image, alt: s.alt }] },
     twitter: { title: s.title, description: s.desc, images: [s.image] },
@@ -44,12 +52,15 @@ function splitH1(h1: string) {
 
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
+  const area = getAreaPage(slug);
+  if (area) return <AreaLanding a={area} />;
   const s = getService(slug);
   if (!s) notFound();
 
   const { main, accent } = splitH1(s.h1);
   const noun = s.short.replace(/ (Repair|Service|Services|Installation)$/, "");
   const related = SERVICES.filter((r) => r.slug !== s.slug);
+  const isAc = s.cat === "AC Services";
 
   return (
     <>
@@ -160,6 +171,19 @@ export default async function ServicePage({ params }: Props) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* BRANDS */}
+      <section className="about-section section-pad section-pad--tight" aria-labelledby="bs-h">
+        <div className="section-shell">
+          <p className="area-label" id="bs-h">Brands we service for {s.short.toLowerCase()} in Vizag</p>
+          <ul className="area-chips">
+            {(isAc ? BRANDS.filter((b) => AC_BRAND_SLUGS.includes(b.slug)) : BRANDS).map((b) => (
+              <li key={b.slug}>{isAc ? <Link href={`/ac-brands-vizag/#${b.slug}`}>{b.name}</Link> : b.name}</li>
+            ))}
+          </ul>
+          <p className="brands-note" style={{ marginTop: 12 }}>Independent multi-brand service – not an authorised service centre of these brands.</p>
         </div>
       </section>
 

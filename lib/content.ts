@@ -1,3 +1,4 @@
+import { AC_EXTRA } from "./content-ac";
 // All website copy lives here. Edit text, then redeploy.
 import type { Service, Faq, Feature, Step } from "./types";
 
@@ -26,6 +27,7 @@ export const AREAS: string[] = [
   "Marripalem",
   "Arilova",
   "Gopalapatnam",
+  "Madhavadhara",
   "Malkapuram",
   "Kommadi",
   "Beach Road",
@@ -204,7 +206,7 @@ export const BRANDS: { slug: string; name: string; w: number; h: number }[] = [
   }
 ];
 
-export const SERVICES: Service[] = [
+const BASE: Service[] = [
   {
     "slug": "ac-repair-service-vizag",
     "icon": "snow",
@@ -220,9 +222,9 @@ export const SERVICES: Service[] = [
       "AC Cooling Problems",
       "AC Maintenance"
     ],
-    "title": "AC Repair in Vizag | Split & Window AC | AC Service Vizag",
-    "desc": "AC repair service in Vizag for split and window ACs – gas filling, general service, cooling and water leakage problems. Doorstep visit. Call 9000626018.",
-    "h1": "AC Repair Service in Vizag – Split & Window AC Experts",
+    "title": "AC Repair in Vizag | Split & Window AC Repair by AC Technicians",
+    "desc": "AC repair in Vizag – AC technician at your doorstep for split & window AC not cooling, water leakage, noise, error codes, PCB and compressor faults. Call 9000626018.",
+    "h1": "AC Repair in Vizag – Split & Window AC Technicians at Your Doorstep",
     "lead": "AC not cooling, leaking water or making noise? AC Service Vizag repairs and services split and window air conditioners at homes and offices across Visakhapatnam.",
     "alt": "Split AC with cool airflow – AC repair service in Vizag",
     "about": [
@@ -303,7 +305,7 @@ export const SERVICES: Service[] = [
         "a": "Our main location is RTC Complex, Dwaraka Nagar. We mainly serve Dwaraka Nagar, NAD Junction, Gajuwaka, Pendurthi and Vepagunta, and also cover the rest of Visakhapatnam city and nearby localities. Call or WhatsApp to confirm a visit to your area."
       }
     ],
-    "image": "/images/services/ac.webp",
+    "image": "/images/services/ac-repair-visakhapatnam.webp",
     "waMessage": "Hi AC Service Vizag, I need AC repair service in Vizag.",
     "cardTitle": "Air conditioning",
     "cardText": "Cool, comfortable rooms start with AC care you can count on.",
@@ -322,7 +324,7 @@ export const SERVICES: Service[] = [
       "Copper Piping",
       "Stand & Bracket Fitting"
     ],
-    "title": "AC Installation in Vizag | Split & Window | AC Service Vizag",
+    "title": "AC Installation in Vizag | Split & Window AC Fitting & Uninstallation",
     "desc": "AC installation in Vizag for split and window ACs. Neat copper piping, secure outdoor unit mounting, uninstallation and shifting. Call 9000626018.",
     "h1": "AC Installation in Vizag – Neat, Safe & Correctly Fitted",
     "lead": "Bought a new AC or moving house? We install, uninstall and shift split and window ACs across Visakhapatnam so they cool efficiently from day one.",
@@ -405,7 +407,7 @@ export const SERVICES: Service[] = [
         "a": "Most standard split AC installations are completed within a few hours, depending on wall type, pipe length and outdoor unit position."
       }
     ],
-    "image": "/images/rk-hero.jpg",
+    "image": "/images/services/ac-installation-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need AC installation in Vizag.",
     "cardTitle": "AC installation",
     "cardText": "Neat, safe split and window AC fitting, uninstallation and shifting.",
@@ -425,7 +427,7 @@ export const SERVICES: Service[] = [
       "Gas Filling",
       "Maintenance"
     ],
-    "title": "Refrigerator Repair in Vizag | Gas Filling & Compressor",
+    "title": "Refrigerator Repair in Vizag | Fridge Gas Filling & Compressor Repair",
     "desc": "Refrigerator repair in Vizag for single door, double door and frost-free fridges. Cooling, compressor and gas filling problems fixed. Call 9000626018.",
     "h1": "Refrigerator Repair in Vizag – Single & Double Door Fridges",
     "lead": "Fridge not cooling, freezer icing up or compressor not starting? We repair single door, double door and frost-free refrigerators at your home in Visakhapatnam.",
@@ -508,7 +510,7 @@ export const SERVICES: Service[] = [
         "a": "We service LG, Samsung, Whirlpool, Haier, Godrej and other common refrigerator brands."
       }
     ],
-    "image": "/images/services/fridge.webp",
+    "image": "/images/services/refrigerator-repair-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need refrigerator repair in Vizag.",
     "cardTitle": "Refrigerators",
     "cardText": "Reliable fixes for cooling problems, compressors and more.",
@@ -528,7 +530,7 @@ export const SERVICES: Service[] = [
       "Installation",
       "Maintenance"
     ],
-    "title": "Washing Machine Repair in Vizag | Front & Top Load",
+    "title": "Washing Machine Repair in Vizag | Front Load & Top Load Service",
     "desc": "Washing machine repair in Vizag for front load, top load and semi-automatic machines. Drum, motor, drainage and spin problems fixed. Call 9000626018.",
     "h1": "Washing Machine Repair in Vizag – Front Load & Top Load",
     "lead": "Machine not spinning, not draining or showing an error? We repair fully automatic front load, top load and semi-automatic washing machines at your doorstep in Visakhapatnam.",
@@ -611,7 +613,7 @@ export const SERVICES: Service[] = [
         "a": "We repair LG, Samsung, Whirlpool, Haier, Godrej and other popular washing machine brands."
       }
     ],
-    "image": "/images/services/washer.webp",
+    "image": "/images/services/washing-machine-repair-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need washing machine repair in Vizag.",
     "cardTitle": "Washing machines",
     "cardText": "Get laundry day moving again with careful, capable repairs.",
@@ -712,7 +714,7 @@ export const SERVICES: Service[] = [
         "a": "Yes. We identify the leaking connector, pipe or housing and repair or replace it."
       }
     ],
-    "image": "/images/services/ro.webp",
+    "image": "/images/services/ro-service-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need RO water purifier service in Vizag.",
     "cardTitle": "RO water purifiers",
     "cardText": "Keep clean water flowing with dependable purifier care.",
@@ -813,7 +815,7 @@ export const SERVICES: Service[] = [
         "a": "We repair Bajaj and other commonly used storage and instant geyser brands."
       }
     ],
-    "image": "/images/services/geyser.webp",
+    "image": "/images/services/geyser-repair-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need geyser repair in Vizag.",
     "cardTitle": "Geysers",
     "cardText": "Restore dependable hot water with a safe, timely repair.",
@@ -832,9 +834,9 @@ export const SERVICES: Service[] = [
       "Electrical Repair",
       "Electrical Maintenance"
     ],
-    "title": "Electrical Services in Vizag | Electrician for Wiring & MCB",
-    "desc": "Electrical services in Vizag – home wiring, switch board, MCB and DB installation, electrical repair and maintenance for homes and shops. Call 9000626018.",
-    "h1": "Electrical Services in Vizag – Wiring, MCB & DB Installation",
+    "title": "Electrical Repair in Vizag | Electrician for Home Wiring & MCB",
+    "desc": "Electrician in Vizag for home electrical repairs – wiring, switch boards, MCB & DB installation, fan & light fitting, power faults. Doorstep electrical service. Call 9000626018.",
+    "h1": "Electrical Repair in Vizag – Electrician for Wiring, MCB & DB Work",
     "lead": "Need a reliable electrician in Vizag? We handle home wiring, switch boards, MCB and distribution board installation, and electrical repairs for homes and shops.",
     "alt": "Switch board, MCB panel, wiring and bulb – electrical services in Vizag",
     "about": [
@@ -915,7 +917,7 @@ export const SERVICES: Service[] = [
         "a": "Yes. We install and organise distribution boards with MCBs for each circuit."
       }
     ],
-    "image": "/images/services/electrical.webp",
+    "image": "/images/services/electrical-repair-vizag.webp",
     "waMessage": "Hi AC Service Vizag, I need an electrician in Vizag.",
     "cardTitle": "Electrical works",
     "cardText": "Thoughtful home electrical work, completed with care.",
@@ -923,30 +925,66 @@ export const SERVICES: Service[] = [
   }
 ];
 
+const bySlug = (slug: string) => {
+  const s = BASE.find((x) => x.slug === slug) || AC_EXTRA[slug];
+  if (!s) throw new Error(`Missing service ${slug}`);
+  return s;
+};
+
+/** All service pages, in menu order. */
+export const SERVICES: Service[] = [
+  "ac-service-vizag", "ac-repair-service-vizag", "ac-installation-vizag", "ac-gas-filling-vizag",
+  "ac-cleaning-service-vizag", "ac-maintenance-vizag", "ac-amc-service-vizag",
+  "refrigerator-repair-vizag", "washing-machine-repair-vizag", "ro-service-vizag", "geyser-repair-vizag",
+  "electrical-services-vizag",
+].map(bySlug);
+
+/** The six category cards shown on the home page and hero chips. */
+export const HOME_CARDS = ["ac-repair-service-vizag", "refrigerator-repair-vizag", "washing-machine-repair-vizag", "ro-service-vizag", "geyser-repair-vizag", "electrical-services-vizag"];
+
+/** AC-specific pages linked from the AC repair card. */
+export const AC_PAGES = ["ac-service-vizag", "ac-installation-vizag", "ac-gas-filling-vizag", "ac-cleaning-service-vizag", "ac-maintenance-vizag", "ac-amc-service-vizag"];
+
 export const HOME_FAQS: Faq[] = [
   {
-    "q": "What services does AC Service Vizag offer in Vizag?",
-    "a": "We offer AC repair, AC installation, AC gas filling and general service, refrigerator repair, washing machine repair, RO water purifier service, geyser repair and home electrical services in Visakhapatnam."
+    "q": "Where can I find AC service in Vizag?",
+    "a": "AC Service Vizag is based at RTC Complex, Dwaraka Nagar, Visakhapatnam and provides doorstep AC service, AC repair and AC installation across Vizag. Call or WhatsApp 9000626018."
   },
   {
-    "q": "Which areas of Visakhapatnam do you cover?",
-    "a": "Our main location is RTC Complex, Dwaraka Nagar, Visakhapatnam. From there we serve NAD Junction, Gajuwaka, Pendurthi, Vepagunta and the rest of Vizag city and nearby localities. Call or WhatsApp to confirm your area."
+    "q": "How can I book AC repair in Visakhapatnam?",
+    "a": "Call 9000626018 or send a WhatsApp message with your AC type, brand, the problem and your area. We confirm a convenient visit time."
   },
   {
-    "q": "How do I book a service?",
-    "a": "Call 9000626018 or send a WhatsApp message with your appliance, the problem and your area. We will confirm a convenient visit time."
+    "q": "Do you provide split AC servicing?",
+    "a": "Yes. We service and repair inverter and non-inverter split ACs, as well as window ACs, of all major brands."
   },
   {
-    "q": "Which brands do you service?",
-    "a": "We service all major brands including LG, Samsung, Whirlpool, Haier, Godrej, Voltas, Daikin and Bajaj."
+    "q": "Do you provide AC installation?",
+    "a": "Yes. We install, uninstall and shift split and window ACs, with neat copper piping and secure outdoor unit mounting."
+  },
+  {
+    "q": "Do you provide AC gas filling?",
+    "a": "Yes. We check gas pressure, find and repair leaks, and then fill the correct refrigerant to the right level."
+  },
+  {
+    "q": "Which AC brands do you service?",
+    "a": "We service all major AC brands including LG, Samsung, Voltas, Daikin, Whirlpool, Blue Star, Hitachi, Carrier, Panasonic, Haier, Godrej and Lloyd."
+  },
+  {
+    "q": "Do you provide home AC service?",
+    "a": "Yes. All our AC and appliance services are done at your home, office or shop in Visakhapatnam."
+  },
+  {
+    "q": "Which areas in Vizag do you cover?",
+    "a": "Our main location is RTC Complex, Dwaraka Nagar. We mainly serve Dwaraka Nagar, NAD Junction, Gajuwaka, Pendurthi and Vepagunta, and also cover the rest of Vizag city and nearby localities. Call or WhatsApp to confirm your area."
+  },
+  {
+    "q": "Do you also do electrical repairs?",
+    "a": "Yes. Along with AC services we handle home electrical repairs – wiring, switch boards, MCB and DB installation, fan and light fitting – plus refrigerator, washing machine, RO and geyser repair."
   },
   {
     "q": "Will I know the charges before the repair starts?",
-    "a": "Yes. Our technician inspects the appliance, explains the problem and tells you the charges before starting any work."
-  },
-  {
-    "q": "Do you provide doorstep service?",
-    "a": "Yes. All our services are provided at your home or office in Visakhapatnam."
+    "a": "Yes. Our technician inspects first, explains the problem and tells you the charges before starting any work."
   }
 ];
 

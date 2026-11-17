@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Clock3, MapPin, MessageSquareText, ShieldCheck, Wrench, Zap } from "lucide-react";
-import { HOME_FAQS, SERVICES } from "@/lib/content";
+import { AC_PAGES, HOME_CARDS, HOME_FAQS, getService } from "@/lib/content";
 import { BUSINESS, servicePath } from "@/lib/site";
 import { homeGraph } from "@/lib/schema";
+import { HOME_KEYWORDS } from "@/lib/keywords";
 import { Reveal } from "@/components/Reveal";
 import { AppIcon } from "@/components/icons";
 import { LogoStamp } from "@/components/LogoStamp";
@@ -13,20 +14,22 @@ import {
   ReasonsSection, ServiceCard, SplitHeading, WhatsAppButton,
 } from "@/components/blocks";
 
-const TITLE = "AC Service Vizag | AC Repair & Electrical Repairs in Vizag";
+const TITLE = "AC Service Vizag | AC Repair & Installation in Visakhapatnam";
 const DESC =
-  "AC repair & appliance service in Vizag – NAD, Gajuwaka, Pendurthi, Vepagunta & RTC Complex. AC, fridge, washing machine, RO, geyser & electrical. Call 9000626018.";
+  "Looking for AC service in Vizag? Get professional AC repair, servicing, installation, maintenance and electrical repair services in Visakhapatnam. Contact AC Service Vizag today.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESC,
+  keywords: HOME_KEYWORDS,
   alternates: { canonical: "/" },
   openGraph: { title: TITLE, description: DESC, url: "/" },
   twitter: { title: TITLE, description: DESC },
 };
 
 export default function HomePage() {
-  const cards = SERVICES.filter((s) => s.slug !== "ac-installation-vizag");
+  const cards = HOME_CARDS.map((slug) => getService(slug)!);
+  const acPages = AC_PAGES.map((slug) => getService(slug)!);
 
   return (
     <>
@@ -41,10 +44,10 @@ export default function HomePage() {
               <Zap aria-hidden="true" /> {BUSINESS.tagline.replace(/\.$/, "")}
             </p>
             <h1 id="hero-h">
-              AC Repair &amp; Electrical Service <em>in Vizag.</em>
+              Professional AC Service &amp; Repair <em>in Visakhapatnam.</em>
             </h1>
             <p className="hero__description">
-              Doorstep AC repair, installation and gas filling – plus refrigerator, washing machine, RO, geyser and home electrical work.
+              Doorstep AC service, AC repair, installation and gas filling – plus a trusted electrician for home electrical repairs, and refrigerator, washing machine, RO and geyser service.
               Based at RTC Complex, Dwaraka Nagar – serving NAD, Gajuwaka, Pendurthi, Vepagunta and all of Visakhapatnam.
             </p>
             <div className="hero__actions">
@@ -52,7 +55,7 @@ export default function HomePage() {
               <WhatsAppButton label="WhatsApp us" />
             </div>
             <ul className="hero__services" aria-label="Our services">
-              {SERVICES.filter((x) => x.slug !== "ac-installation-vizag").map((x) => (
+              {cards.map((x) => (
                 <li key={x.slug}>
                   <Link href={servicePath(x.slug)}>
                     <AppIcon name={x.icon} /> {x.cardTitle}
@@ -66,7 +69,7 @@ export default function HomePage() {
             <div className="hero__frame">
               <Image
                 className="hero__photo"
-                src="/images/rk-hero.jpg"
+                src="/images/ac-service-vizag.webp"
                 alt="AC Service Vizag technician carefully repairing a split air conditioner in a Vizag home"
                 width={1536}
                 height={1024}
@@ -128,10 +131,22 @@ export default function HomePage() {
                 key={s.slug}
                 s={s}
                 index={i}
-                extraLink={s.slug === "ac-repair-service-vizag" ? { href: servicePath("ac-installation-vizag"), label: "AC Installation in Vizag" } : undefined}
               />
             ))}
           </div>
+          <nav className="ac-links" aria-label="All AC services in Vizag">
+            <p className="area-label">All AC services in Vizag</p>
+            <ul className="area-chips">
+              {acPages.map((x) => (
+                <li key={x.slug}>
+                  <Link href={servicePath(x.slug)}>{x.short} in Vizag</Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/ac-brands-vizag/">AC brands we service</Link>
+              </li>
+            </ul>
+          </nav>
           <div className="services-footer">
             <p>Not sure what’s gone wrong? Tell us what you’re seeing.</p>
             <a className="text-link" href="#contact">
@@ -146,7 +161,7 @@ export default function HomePage() {
         <div className="section-shell about-grid">
           <Reveal className="about-visual">
             <Image
-              src="/images/rk-hero.jpg"
+              src="/images/ac-service-vizag.webp"
               alt="A skilled AC Service Vizag technician providing careful home air conditioner service in Visakhapatnam"
               width={1536}
               height={1024}

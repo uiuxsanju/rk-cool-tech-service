@@ -650,3 +650,51 @@
 .footer-brand > a { padding: 12px 18px; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px rgb(0 0 0 / .18); }
 .about-stamp { background: #fff; }
 .intro-strip__mark { background: #fff; border-radius: 50%; }
+.contact-details__mail { margin-top: 8px; word-break: break-all; }
+.contact-details__mail svg { color: #ffb3b8; }
+
+/* Area page links */
+.area-chips.area-chips--primary li a { display: inline-flex; align-items: center; gap: 7px; color: inherit; text-decoration: none; }
+.area-chips.area-chips--primary li:has(a):hover { background: var(--call-red); }
+.area-links { margin-top: 8px; }
+.footer-areas { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-block: 16px; border-top: 1px solid rgba(255,255,255,.12); font-size: 14px; }
+.footer-areas strong { color: #fff; font-weight: 700; }
+.footer-areas a { color: rgba(255,255,255,.75); text-decoration: none; }
+.footer-areas a:hover { color: #fff; text-decoration: underline; }
+
+/* ===== SEO pages ===== */
+.section-pad--tight { padding-block: 44px; }
+.ac-links { margin-top: 30px; }
+.ac-links .area-chips li a, .area-chips li a { color: inherit; text-decoration: none; }
+.ac-links .area-chips li:hover, .area-chips li:has(a):hover { border-color: var(--brand-blue); color: var(--brand-blue); }
+.area-chips.area-chips--primary li:has(a):hover { color: #fff; }
+.nav-dd__menu { width: 560px; display: none; flex-direction: row; flex-wrap: wrap; }
+.nav-dd.is-open .nav-dd__menu { display: flex; }
+.nav-dd__menu a { width: 50%; }
+@media (width <= 820px) { .nav-dd__menu { width: auto; } .nav-dd__menu a { width: 100%; } }
+.contact-list { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 14px; }
+.contact-list li { display: flex; gap: 12px; align-items: flex-start; }
+.contact-list svg { width: 38px; height: 38px; padding: 9px; border-radius: 12px; background: var(--site-light-blue); color: var(--navy-text); flex: none; }
+.contact-list small { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--site-copy); }
+.contact-list a { color: var(--site-ink); font-weight: 700; text-decoration: none; word-break: break-word; }
+.contact-list a:hover { color: var(--brand-blue); }
+.map-embed { border-radius: 22px; overflow: hidden; border: 1px solid var(--site-line); min-height: 360px; }
+.map-embed iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+.brand-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 30px; }
+.brand-card { scroll-margin-top: 110px; padding: 22px; background: #fff; border: 1px solid var(--site-line); border-radius: 20px; display: flex; flex-direction: column; gap: 8px; }
+.brand-card__logo { height: 56px; display: flex; align-items: center; }
+.brand-card__logo img { max-height: 46px; width: auto; height: auto; max-width: 150px; object-fit: contain; }
+.brand-card h3 { font-size: var(--fs-h3-sm, 17px); font-weight: 800; color: var(--site-ink); }
+.brand-card p { font-size: 15px; color: var(--site-copy); line-height: 1.6; flex: 1; }
+.brand-card a { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--wa); text-decoration: none; }
+.brand-card a svg { width: 16px; height: 16px; }
+.area-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.area-notes article { scroll-margin-top: 110px; padding: 18px; border: 1px solid var(--site-line); border-radius: 16px; background: #fff; }
+.area-notes h3 { display: flex; align-items: center; gap: 7px; font-size: 17px; font-weight: 800; color: var(--site-ink); }
+.area-notes h3 svg { width: 16px; height: 16px; color: var(--call-red); }
+.area-notes p { margin-top: 6px; font-size: 14px; line-height: 1.6; color: var(--site-copy); }
+.related--area { grid-template-columns: 48px minmax(0, 1fr) 20px; }
+.related__pin { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--brand-navy); color: #fff; }
+.related__pin svg { width: 20px; height: 20px; }
+@media (width <= 1000px) { .brand-cards, .area-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (width <= 620px) { .brand-cards, .area-notes { grid-template-columns: 1fr; } }

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { SERVICES } from "@/lib/content";
-import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
+import { AREA_PAGES } from "@/lib/areas";
+import { BUSINESS, MAIL_HREF, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import { WhatsAppIcon } from "./icons";
 
 export function Footer() {
@@ -19,13 +20,12 @@ export function Footer() {
         <div className="footer-column">
           <h2>Explore</h2>
           <Link href="/">Home</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/about/">About us</Link>
           <Link href="/#services">Services</Link>
-          <Link href="/#brands">Brands</Link>
-          <Link href="/#why-us">Why us</Link>
-          <Link href="/#areas">Service areas</Link>
+          <Link href="/ac-brands-vizag/">AC brands</Link>
+          <Link href="/service-areas/">Service areas</Link>
           <Link href="/#faq">FAQ</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/contact/">Contact us</Link>
         </div>
         <div className="footer-column">
           <h2>Our services</h2>
@@ -45,6 +45,10 @@ export function Footer() {
             <WhatsAppIcon className="size-3.5" />
             WhatsApp us
           </a>
+          <a href={MAIL_HREF} className="inline-flex items-center gap-2 break-all">
+            <Mail className="size-3.5 shrink-0" aria-hidden="true" />
+            {BUSINESS.email}
+          </a>
           <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-2">
             <MapPin className="mt-1 size-3.5 shrink-0" aria-hidden="true" />
             <span>
@@ -55,6 +59,12 @@ export function Footer() {
           </a>
         </div>
       </div>
+      <nav className="section-shell footer-areas" aria-label="AC service areas in Vizag">
+        <strong>AC service &amp; electrician in:</strong>
+        {AREA_PAGES.map((a) => (
+          <Link key={a.slug} href={servicePath(a.slug)}>{a.name}</Link>
+        ))}
+      </nav>
       <div className="section-shell footer-bottom">
         <span>© {new Date().getFullYear()} AC Service Vizag. All rights reserved.</span>
         <a href="#top">

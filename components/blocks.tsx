@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Check, MapPin, Phone, Plus } from "lucide-react";
+import { ArrowRight, BadgeCheck, Check, Mail, MapPin, Phone, Plus } from "lucide-react";
 import type { ReactNode } from "react";
 import { AREAS, BRANDS, PRIMARY_AREAS, STEPS, WHY } from "@/lib/content";
-import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
+import { areaPageFor } from "@/lib/areas";
+import { BUSINESS, MAIL_HREF, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import type { Faq, Service } from "@/lib/types";
 import { AppIcon, WhatsAppIcon } from "./icons";
 import { EnquiryForm } from "./EnquiryForm";
@@ -258,11 +259,20 @@ export function AreaSection({ title, text }: { title: ReactNode; text: string })
           </a>
           <p className="area-label">Main service areas</p>
           <ul className="area-chips area-chips--primary" aria-label="Main service areas in Visakhapatnam">
-            {PRIMARY_AREAS.map((a) => (
-              <li key={a}>
-                <MapPin aria-hidden="true" /> {a}
-              </li>
-            ))}
+            {PRIMARY_AREAS.map((a) => {
+              const page = areaPageFor(a);
+              return (
+                <li key={a}>
+                  {page ? (
+                    <Link href={servicePath(page.slug)} title={`AC service in ${page.name}, Vizag`}>
+                      <MapPin aria-hidden="true" /> {a}
+                    </Link>
+                  ) : (
+                    <><MapPin aria-hidden="true" /> {a}</>
+                  )}
+                </li>
+              );
+            })}
           </ul>
           <p className="area-label">Also serving</p>
           <ul className="area-chips" aria-label="Other localities we serve in Visakhapatnam">
@@ -347,6 +357,9 @@ export function ContactSection({ title, text, message, defaultService }: { title
           </a>
           <a className="contact-details__addr" href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
             <MapPin aria-hidden="true" /> RTC Complex, Dwaraka Nagar, Visakhapatnam
+          </a>
+          <a className="contact-details__addr contact-details__mail" href={MAIL_HREF}>
+            <Mail aria-hidden="true" /> {BUSINESS.email}
           </a>
           <div className="contact-details__actions">
             <CallButton className="contact-call" />

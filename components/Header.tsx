@@ -10,11 +10,11 @@ import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import { AppIcon, WhatsAppIcon } from "./icons";
 
 const LINKS = [
-  { href: "/#about", label: "About" },
-  { href: "/#brands", label: "Brands" },
-  { href: "/#why-us", label: "Why us" },
+  { href: "/about/", label: "About" },
+  { href: "/ac-brands-vizag/", label: "Brands" },
+  { href: "/service-areas/", label: "Areas" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact/", label: "Contact" },
 ];
 
 export function Header() {
