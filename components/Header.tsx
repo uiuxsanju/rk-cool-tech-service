@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, MapPin, Menu, Phone, X } from "lucide-react";
 import { SERVICES } from "@/lib/content";
-import { BUSINESS, TEL_HREF, servicePath, waHref } from "@/lib/site";
+import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import { AppIcon, WhatsAppIcon } from "./icons";
 
 const LINKS = [
@@ -58,8 +58,11 @@ export function Header() {
       </a>
       <div className="announcement" id="top">
         <span className="announcement__dot" aria-hidden="true" />
-        <span className="announcement__long">AC repair &amp; home appliance care, across Vizag</span>
-        <span className="announcement__short">AC &amp; appliance care, Vizag</span>
+        <a className="announcement__loc" href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
+          <MapPin aria-hidden="true" />
+          <span className="announcement__long">RTC Complex, Dwaraka Nagar, Visakhapatnam</span>
+          <span className="announcement__short">RTC Complex, Dwaraka Nagar</span>
+        </a>
         <a href={TEL_HREF}>
           <Phone aria-hidden="true" />
           <span>{BUSINESS.phoneDisplay}</span>
@@ -68,8 +71,8 @@ export function Header() {
 
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <div className="site-header__inner">
-          <Link className="brand-lockup" href="/" aria-label="RK Cool Tech Services home" onClick={close}>
-            <Image src="/images/rk-logo.webp" alt="RK Cool Tech Services — Your Comfort, Our Priority" width={700} height={238} priority sizes="232px" />
+          <Link className="brand-lockup" href="/" aria-label="AC Service Vizag home" onClick={close}>
+            <Image src="/images/logo.webp" alt="AC Service Vizag – One Call for All Electrical Repairs" width={700} height={167} priority sizes="250px" />
           </Link>
 
           <nav className={`main-nav${open ? " main-nav--open" : ""}`} aria-label="Main navigation">
@@ -109,7 +112,7 @@ export function Header() {
               <Phone aria-hidden="true" className="ring-icon" />
               <span>Call now</span>
             </a>
-            <a className="btn header-whatsapp" href={waHref()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp RK Cool Tech Services">
+            <a className="btn header-whatsapp" href={waHref()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AC Service Vizag">
               <WhatsAppIcon />
               <span>WhatsApp us</span>
             </a>

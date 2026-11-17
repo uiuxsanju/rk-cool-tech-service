@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { SERVICES } from "@/lib/content";
-import { BUSINESS, TEL_HREF, servicePath, waHref } from "@/lib/site";
+import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import { WhatsAppIcon } from "./icons";
 
 export function Footer() {
@@ -10,11 +10,11 @@ export function Footer() {
     <footer className="site-footer">
       <div className="section-shell footer-main">
         <div className="footer-brand">
-          <Link href="/" aria-label="RK Cool Tech Services home">
-            <Image src="/images/rk-logo.webp" alt="RK Cool Tech Services" width={700} height={238} sizes="169px" />
+          <Link href="/" aria-label="AC Service Vizag home">
+            <Image src="/images/logo.webp" alt="AC Service Vizag logo" width={700} height={167} sizes="200px" />
           </Link>
           <p>Professional AC repair, appliance repair, installation and electrical care for homes across Visakhapatnam (Vizag). Owner: {BUSINESS.owner}.</p>
-          <span className="footer-tagline">YOUR COMFORT, OUR PRIORITY.</span>
+          <span className="footer-tagline">ONE CALL FOR ALL ELECTRICAL REPAIRS.</span>
         </div>
         <div className="footer-column">
           <h2>Explore</h2>
@@ -45,15 +45,18 @@ export function Footer() {
             <WhatsAppIcon className="size-3.5" />
             WhatsApp us
           </a>
-          <span>
-            Visakhapatnam,
-            <br />
-            Andhra Pradesh, India
-          </span>
+          <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-2">
+            <MapPin className="mt-1 size-3.5 shrink-0" aria-hidden="true" />
+            <span>
+              RTC Complex, Dwaraka Nagar,
+              <br />
+              Visakhapatnam, Andhra Pradesh
+            </span>
+          </a>
         </div>
       </div>
       <div className="section-shell footer-bottom">
-        <span>© {new Date().getFullYear()} RK Cool Tech Services. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} AC Service Vizag. All rights reserved.</span>
         <a href="#top">
           Back to top <ArrowRight aria-hidden="true" />
         </a>

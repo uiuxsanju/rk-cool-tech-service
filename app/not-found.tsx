@@ -5,7 +5,7 @@ import { servicePath } from "@/lib/site";
 import { CallButton, WhatsAppButton } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: { absolute: "Page Not Found | RK Cool Tech Services Vizag" },
+  title: { absolute: "Page Not Found | AC Service Vizag Vizag" },
   robots: { index: false, follow: true },
 };
 

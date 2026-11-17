@@ -14,7 +14,7 @@ export function EnquiryForm({ defaultService }: { defaultService?: string }) {
     const f = new FormData(e.currentTarget);
     const v = (k: string) => String(f.get(k) ?? "").trim();
     const lines = [
-      "Hello RK Cool Tech Services, I would like to book a service.",
+      "Hello AC Service Vizag, I would like to book a service.",
       `Name: ${v("name")}`,
       `Service: ${v("service")}`,
       `Area in Vizag: ${v("area")}`,

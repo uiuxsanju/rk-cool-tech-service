@@ -1,7 +1,7 @@
-# RK Cool Tech Services – Next.js Website
+# AC Service Vizag – Next.js Website
 
 SEO-optimised website built on the **Lovable design** (screenshot-scene-studio-54.lovable.app), with full service pages added.
-Premium, SEO-optimised website for **RK Cool Tech Services**, an AC repair & home appliance service business in Visakhapatnam (Vizag).
+Premium, SEO-optimised website for **AC Service Vizag**, an AC repair & home appliance service business in Visakhapatnam (Vizag).
 
 **Stack:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Lucide React · Framer Motion · next/image · next/font (self-hosted Manrope + DM Sans)
 

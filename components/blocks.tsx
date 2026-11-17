@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck, Check, MapPin, Phone, Plus } from "lucide-react";
 import type { ReactNode } from "react";
 import { AREAS, BRANDS, PRIMARY_AREAS, STEPS, WHY } from "@/lib/content";
-import { BUSINESS, TEL_HREF, servicePath, waHref } from "@/lib/site";
+import { BUSINESS, MAPS_HREF, TEL_HREF, servicePath, waHref } from "@/lib/site";
 import type { Faq, Service } from "@/lib/types";
 import { AppIcon, WhatsAppIcon } from "./icons";
 import { EnquiryForm } from "./EnquiryForm";
@@ -112,7 +112,7 @@ export function ReasonsSection({ title }: { title?: ReactNode }) {
       <div className="section-shell">
         <CenterHeading
           id="why-h"
-          eyebrow="THE RK DIFFERENCE"
+          eyebrow="THE AC SERVICE VIZAG DIFFERENCE"
           title={title ?? <>Care you can <em>feel good about.</em></>}
           intro="Professional service, with people and homes always in mind."
         />
@@ -181,8 +181,8 @@ export function BrandsSection() {
         <div className="brands-note">
           <BadgeCheck aria-hidden="true" />
           <span>
-            Repair, service and installation for all major appliance brands. Brand names and logos belong to their respective owners; RK Cool
-            Tech Services is an independent service provider, not an authorised service centre.
+            Repair, service and installation for all major appliance brands. Brand names and logos belong to their respective owners; AC Service
+            Vizag is an independent service provider, not an authorised service centre.
           </span>
         </div>
       </div>
@@ -247,6 +247,15 @@ export function AreaSection({ title, text }: { title: ReactNode; text: string })
             {title}
           </h2>
           <p>{text}</p>
+          <a className="main-loc" href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
+            <span className="main-loc__icon"><MapPin aria-hidden="true" /></span>
+            <span>
+              <small>Main location</small>
+              <strong>RTC Complex, Dwaraka Nagar</strong>
+              <em>Visakhapatnam, Andhra Pradesh · Open in Google Maps</em>
+            </span>
+            <ArrowRight aria-hidden="true" />
+          </a>
           <p className="area-label">Main service areas</p>
           <ul className="area-chips area-chips--primary" aria-label="Main service areas in Visakhapatnam">
             {PRIMARY_AREAS.map((a) => (
@@ -262,7 +271,7 @@ export function AreaSection({ title, text }: { title: ReactNode; text: string })
             ))}
             <li>&amp; nearby areas</li>
           </ul>
-          <a className="text-link" href={waHref("Hi RK Cool Tech Services, do you provide service in my area in Vizag?")} target="_blank" rel="noopener noreferrer">
+          <a className="text-link" href={waHref("Hi AC Service Vizag, do you provide service in my area in Vizag?")} target="_blank" rel="noopener noreferrer">
             <MapPin aria-hidden="true" /> Check if we cover your area <ArrowRight aria-hidden="true" />
           </a>
         </div>
@@ -275,7 +284,7 @@ export function AreaSection({ title, text }: { title: ReactNode; text: string })
           <span className="area-map__pin">
             <MapPin />
           </span>
-          <span className="area-map__label">NAD · GAJUWAKA · PENDURTHI</span>
+          <span className="area-map__label">RTC COMPLEX · DWARAKA NAGAR</span>
           <span className="area-map__compass">
             N <ArrowRight />
           </span>
@@ -332,9 +341,12 @@ export function ContactSection({ title, text, message, defaultService }: { title
         <Reveal className="contact-details">
           <span className="contact-details__label">YOUR LOCAL SERVICE CONTACT</span>
           <strong>{BUSINESS.owner}</strong>
-          <span>RK Cool Tech Services · Visakhapatnam</span>
+          <span>AC SERVICE VIZAG.in · Visakhapatnam</span>
           <a className="contact-details__phone" href={TEL_HREF}>
             <Phone aria-hidden="true" /> {BUSINESS.phoneDisplay}
+          </a>
+          <a className="contact-details__addr" href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
+            <MapPin aria-hidden="true" /> RTC Complex, Dwaraka Nagar, Visakhapatnam
           </a>
           <div className="contact-details__actions">
             <CallButton className="contact-call" />

@@ -112,7 +112,7 @@ export default async function ServicePage({ params }: Props) {
                 <div>
                   <h3>{o.title}</h3>
                   <p>{o.text}</p>
-                  <a href={waHref(`Hi RK Cool Tech Services, I need ${o.title} in Vizag.`)} target="_blank" rel="noopener noreferrer">
+                  <a href={waHref(`Hi AC Service Vizag, I need ${o.title} in Vizag.`)} target="_blank" rel="noopener noreferrer">
                     <WhatsAppIcon /> Enquire about {o.title}
                   </a>
                 </div>
@@ -137,7 +137,7 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </div>
           <Reveal className="about-visual">
-            <Image src={s.image} alt={`${s.short} in Visakhapatnam by RK Cool Tech Services`} width={1024} height={576} sizes="(max-width:820px) 92vw, 540px" />
+            <Image src={s.image} alt={`${s.short} in Visakhapatnam by AC Service Vizag`} width={1024} height={576} sizes="(max-width:820px) 92vw, 540px" />
             <LogoStamp />
           </Reveal>
         </div>
@@ -163,7 +163,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <ReasonsSection title={<>Why choose RK Cool Tech for <em>{s.short.toLowerCase()}.</em></>} />
+      <ReasonsSection title={<>Why choose AC Service Vizag for <em>{s.short.toLowerCase()}.</em></>} />
       <ProcessSection />
       <AreaSection
         title={<>{s.short} across<br /><em>Visakhapatnam.</em></>}

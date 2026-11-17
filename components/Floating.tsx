@@ -7,10 +7,10 @@ export function Floating() {
   return (
     <>
       <div className="floating">
-        <a className="floating__wa" href={waHref()} target="_blank" rel="noopener noreferrer" aria-label="Contact RK Cool Tech Services on WhatsApp">
+        <a className="floating__wa" href={waHref()} target="_blank" rel="noopener noreferrer" aria-label="Contact AC Service Vizag on WhatsApp">
           <WhatsAppIcon />
         </a>
-        <a className="floating__call" href={TEL_HREF} aria-label="Call RK Cool Tech Services">
+        <a className="floating__call" href={TEL_HREF} aria-label="Call AC Service Vizag">
           <span className="floating__pulse" aria-hidden="true" />
           <Phone aria-hidden="true" className="ring-icon" />
         </a>

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ShieldCheck, Snowflake, Wrench } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock3, MapPin, MessageSquareText, ShieldCheck, Wrench, Zap } from "lucide-react";
 import { HOME_FAQS, SERVICES } from "@/lib/content";
 import { BUSINESS, servicePath } from "@/lib/site";
 import { homeGraph } from "@/lib/schema";
 import { Reveal } from "@/components/Reveal";
+import { AppIcon } from "@/components/icons";
 import { LogoStamp } from "@/components/LogoStamp";
 import {
   AreaSection, BrandsSection, CallButton, ContactSection, Eyebrow, FaqSection, JsonLd, ProcessSection,
   ReasonsSection, ServiceCard, SplitHeading, WhatsAppButton,
 } from "@/components/blocks";
 
-const TITLE = "RK Cool Tech Services | AC Repair & Appliance Service in Vizag";
+const TITLE = "AC Service Vizag | AC Repair & Electrical Repairs in Vizag";
 const DESC =
   "AC repair & appliance service in Vizag – NAD, Gajuwaka, Pendurthi, Vepagunta & RTC Complex. AC, fridge, washing machine, RO, geyser & electrical. Call 9000626018.";
 
@@ -33,68 +34,76 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="hero" id="home" aria-labelledby="hero-h">
+        <div className="hero__bg" aria-hidden="true" />
         <div className="hero__inner">
           <div className="hero__copy">
+            <p className="hero__pill">
+              <Zap aria-hidden="true" /> {BUSINESS.tagline.replace(/\.$/, "")}
+            </p>
             <h1 id="hero-h">
-              <span className="hero__kicker">AC Repair &amp; Home Appliance Service in Vizag</span>
-              Good service.
-              <br />
-              <em>Peace of mind.</em>
+              AC Repair &amp; Electrical Service <em>in Vizag.</em>
             </h1>
             <p className="hero__description">
-              Expert AC repair, installation and gas filling, plus refrigerator, washing machine, RO, geyser and electrical services in
-              NAD, Gajuwaka, Pendurthi, Vepagunta and across Visakhapatnam. Thoughtful work, reliable hands, and a little less to worry about.
+              Doorstep AC repair, installation and gas filling – plus refrigerator, washing machine, RO, geyser and home electrical work.
+              Based at RTC Complex, Dwaraka Nagar – serving NAD, Gajuwaka, Pendurthi, Vepagunta and all of Visakhapatnam.
             </p>
             <div className="hero__actions">
-              <CallButton />
-              <WhatsAppButton />
+              <CallButton label={`Call ${BUSINESS.phoneShort}`} />
+              <WhatsAppButton label="WhatsApp us" />
             </div>
-            <div className="hero__trust">
-              <span className="trust-mark">
-                <ShieldCheck aria-hidden="true" />
-              </span>
-              <span>Experienced technicians</span>
-              <i aria-hidden="true" />
-              <span>Vizag &amp; nearby areas</span>
-              <i aria-hidden="true" />
-              <span>All major brands</span>
-            </div>
+            <ul className="hero__services" aria-label="Our services">
+              {SERVICES.filter((x) => x.slug !== "ac-installation-vizag").map((x) => (
+                <li key={x.slug}>
+                  <Link href={servicePath(x.slug)}>
+                    <AppIcon name={x.icon} /> {x.cardTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
           <div className="hero__visual">
-            <Image
-              className="hero__photo"
-              src="/images/rk-hero.jpg"
-              alt="RK Cool Tech technician carefully inspecting an air conditioner in a Vizag home"
-              width={1536}
-              height={1024}
-              priority
-              sizes="(max-width:700px) 100vw, 640px"
-            />
-            <div className="hero__image-label">
-              <span className="hero__image-icon">
-                <Snowflake aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Comfort, restored.</strong>
-                <small>One repair at a time.</small>
-              </span>
-              <ArrowDownRight aria-hidden="true" />
+            <div className="hero__frame">
+              <Image
+                className="hero__photo"
+                src="/images/rk-hero.jpg"
+                alt="AC Service Vizag technician carefully repairing a split air conditioner in a Vizag home"
+                width={1536}
+                height={1024}
+                priority
+                sizes="(max-width:820px) 100vw, 640px"
+              />
             </div>
-            <div className="hero__photo-note">
-              <span aria-hidden="true" /> VISAKHAPATNAM, ANDHRA PRADESH
+            <div className="hero__badge hero__badge--top">
+              <span className="hero__badge-icon"><BadgeCheck aria-hidden="true" /></span>
+              <span>
+                <strong>28+ brands</strong>
+                <small>LG, Samsung, Daikin, Voltas…</small>
+              </span>
+            </div>
+            <div className="hero__badge hero__badge--bottom">
+              <span className="hero__badge-icon hero__badge-icon--red"><MapPin aria-hidden="true" /></span>
+              <span>
+                <strong>RTC Complex, Dwaraka Nagar</strong>
+                <small>Serving NAD · Gajuwaka · Pendurthi · Vepagunta</small>
+              </span>
             </div>
           </div>
         </div>
-        <div className="hero__bottom-line" aria-label="Appliances we service">
-          <span>AC</span><i aria-hidden="true" /><span>REFRIGERATOR</span><i aria-hidden="true" /><span>WASHING MACHINE</span>
-          <i aria-hidden="true" /><span>RO</span><i aria-hidden="true" /><span>GEYSER</span><i aria-hidden="true" /><span>ELECTRICAL</span>
+        <div className="hero__trust-bar">
+          <ul className="section-shell">
+            <li><ShieldCheck aria-hidden="true" /> Experienced technicians</li>
+            <li><MessageSquareText aria-hidden="true" /> Problem &amp; charges explained first</li>
+            <li><Clock3 aria-hidden="true" /> Quick response on call &amp; WhatsApp</li>
+            <li><BadgeCheck aria-hidden="true" /> All major brands serviced</li>
+          </ul>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="intro-strip" aria-label="Service introduction">
         <div className="section-shell intro-strip__inner">
-          <Image className="intro-strip__mark" src="/images/rk-mark.png" alt="" width={44} height={44} aria-hidden="true" />
+          <Image className="intro-strip__mark" src="/images/logo-mark.png" alt="" width={44} height={44} aria-hidden="true" />
           <p>
             When something at home stops working, <strong>we’re here to help make it right.</strong>
           </p>
@@ -138,7 +147,7 @@ export default function HomePage() {
           <Reveal className="about-visual">
             <Image
               src="/images/rk-hero.jpg"
-              alt="A skilled RK Cool Tech technician providing careful home air conditioner service in Visakhapatnam"
+              alt="A skilled AC Service Vizag technician providing careful home air conditioner service in Visakhapatnam"
               width={1536}
               height={1024}
               sizes="(max-width:700px) 92vw, 560px"
@@ -156,7 +165,7 @@ export default function HomePage() {
               Good work is about more than fixing a fault. It’s about showing up, listening carefully, and leaving your home in better shape.
             </p>
             <p>
-              RK Cool Tech Services provides AC repair, appliance repair, maintenance and installation across Vizag. Owner {BUSINESS.owner} and his
+              AC Service Vizag provides AC repair, appliance repair, maintenance and installation across Vizag. Owner {BUSINESS.owner} and his
               team focus on quality workmanship, reliable service, fair charges and the comfort of every customer – from a split AC near NAD Junction
               to a washing machine in Gajuwaka.
             </p>
@@ -166,7 +175,7 @@ export default function HomePage() {
               </span>
               <span>
                 <strong>{BUSINESS.owner}</strong>
-                <small>Owner, RK Cool Tech Services</small>
+                <small>Owner, AC Service Vizag</small>
               </span>
               <Link href="#contact" aria-label={`Contact ${BUSINESS.owner}`}>
                 <ArrowRight aria-hidden="true" />
@@ -181,7 +190,7 @@ export default function HomePage() {
       <ProcessSection />
       <AreaSection
         title={<>Vizag is home.<br /><em>We’re here for it.</em></>}
-        text="Serving Visakhapatnam and surrounding areas with dependable AC repair, home appliance repair, installation and care – with our main focus on NAD Junction, Pendurthi, Vepagunta, RTC Complex and Gajuwaka."
+        text="Serving Visakhapatnam and surrounding areas with dependable AC repair, home appliance repair, installation and care – from our main location at RTC Complex, Dwaraka Nagar to NAD Junction, Gajuwaka, Pendurthi and Vepagunta."
       />
       <FaqSection faqs={HOME_FAQS} title={<>Questions, <em>answered.</em></>} />
       <ContactSection />

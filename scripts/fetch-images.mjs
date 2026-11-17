@@ -1,5 +1,5 @@
 /**
- * Pulls the real RK Cool Tech photos (logo is local: public/images/rk-logo.*) from the Lovable site into public/images.
+ * Pulls the real AC Service Vizag photos (logo is local: public/images/rk-logo.*) from the Lovable site into public/images.
  * Runs automatically before `npm run dev` and `npm run build` (incl. on Vercel).
  * - Existing real images are kept (commit public/images to git after the first run).
  * - If a download fails, a placeholder from scripts/fallback is used so the build never breaks,

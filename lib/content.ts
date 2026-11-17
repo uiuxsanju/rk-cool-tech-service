@@ -3,18 +3,17 @@ import type { Service, Faq, Feature, Step } from "./types";
 
 /** Main target locations – shown first and highlighted. */
 export const PRIMARY_AREAS: string[] = [
+  "RTC Complex, Dwaraka Nagar",
   "NAD Junction",
+  "Gajuwaka",
   "Pendurthi",
-  "Vepagunta",
-  "RTC Complex",
-  "Gajuwaka"
+  "Vepagunta"
 ];
 
 /** Other localities we also serve. Confirm with the owner and edit freely. */
 export const AREAS: string[] = [
   "MVP Colony",
   "Madhurawada",
-  "Dwaraka Nagar",
   "Seethammadhara",
   "Rushikonda",
   "PM Palem",
@@ -221,10 +220,10 @@ export const SERVICES: Service[] = [
       "AC Cooling Problems",
       "AC Maintenance"
     ],
-    "title": "AC Repair Service in Vizag | Split & Window AC | RK Cool Tech",
+    "title": "AC Repair in Vizag | Split & Window AC | AC Service Vizag",
     "desc": "AC repair service in Vizag for split and window ACs – gas filling, general service, cooling and water leakage problems. Doorstep visit. Call 9000626018.",
     "h1": "AC Repair Service in Vizag – Split & Window AC Experts",
-    "lead": "AC not cooling, leaking water or making noise? RK Cool Tech Services repairs and services split and window air conditioners at homes and offices across Visakhapatnam.",
+    "lead": "AC not cooling, leaking water or making noise? AC Service Vizag repairs and services split and window air conditioners at homes and offices across Visakhapatnam.",
     "alt": "Split AC with cool airflow – AC repair service in Vizag",
     "about": [
       "Visakhapatnam's coastal humidity and long summers make air conditioners work harder than in most cities. Salt-laden air settles on outdoor units, filters clog faster and cooling coils lose efficiency. The result is an AC that runs all day but never feels cold enough, or a bill that keeps rising.",
@@ -301,11 +300,11 @@ export const SERVICES: Service[] = [
       },
       {
         "q": "Which areas in Vizag do you cover for AC repair?",
-        "a": "We mainly serve NAD Junction, Pendurthi, Vepagunta, RTC Complex and Gajuwaka, and also cover the rest of Visakhapatnam city and nearby localities. Call or WhatsApp to confirm a visit to your area."
+        "a": "Our main location is RTC Complex, Dwaraka Nagar. We mainly serve Dwaraka Nagar, NAD Junction, Gajuwaka, Pendurthi and Vepagunta, and also cover the rest of Visakhapatnam city and nearby localities. Call or WhatsApp to confirm a visit to your area."
       }
     ],
     "image": "/images/services/ac.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need AC repair service in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need AC repair service in Vizag.",
     "cardTitle": "Air conditioning",
     "cardText": "Cool, comfortable rooms start with AC care you can count on.",
     "aboutHeading": "Reliable AC repair for Vizag's hot and humid climate"
@@ -323,14 +322,14 @@ export const SERVICES: Service[] = [
       "Copper Piping",
       "Stand & Bracket Fitting"
     ],
-    "title": "AC Installation in Vizag | Split & Window AC | RK Cool Tech",
+    "title": "AC Installation in Vizag | Split & Window | AC Service Vizag",
     "desc": "AC installation in Vizag for split and window ACs. Neat copper piping, secure outdoor unit mounting, uninstallation and shifting. Call 9000626018.",
     "h1": "AC Installation in Vizag – Neat, Safe & Correctly Fitted",
     "lead": "Bought a new AC or moving house? We install, uninstall and shift split and window ACs across Visakhapatnam so they cool efficiently from day one.",
-    "alt": "RK Cool Tech technician installing and checking an air conditioner in a Vizag home",
+    "alt": "AC Service Vizag technician installing and checking an air conditioner in a Vizag home",
     "about": [
       "A poorly installed AC can lose cooling, leak water and fail early – even if the unit is brand new. Common installation mistakes include incorrect indoor unit levelling, long or kinked copper pipes, poor insulation, loose flare joints and outdoor units mounted where hot air cannot escape.",
-      "RK Cool Tech Services plans each installation around your room and building. We choose the right position for the indoor unit, mount the outdoor unit securely on a stand or bracket, route the piping neatly, check for gas leaks and test the cooling before we leave. In high-rise apartments along Beach Road, Rushikonda or Madhurawada we also take care to fix outdoor units safely for coastal wind."
+      "AC Service Vizag plans each installation around your room and building. We choose the right position for the indoor unit, mount the outdoor unit securely on a stand or bracket, route the piping neatly, check for gas leaks and test the cooling before we leave. In high-rise apartments along Beach Road, Rushikonda or Madhurawada we also take care to fix outdoor units safely for coastal wind."
     ],
     "offers": [
       {
@@ -407,7 +406,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/rk-hero.jpg",
-    "waMessage": "Hi RK Cool Tech Services, I need AC installation in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need AC installation in Vizag.",
     "cardTitle": "AC installation",
     "cardText": "Neat, safe split and window AC fitting, uninstallation and shifting.",
     "aboutHeading": "Why correct AC installation matters"
@@ -510,7 +509,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/services/fridge.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need refrigerator repair in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need refrigerator repair in Vizag.",
     "cardTitle": "Refrigerators",
     "cardText": "Reliable fixes for cooling problems, compressors and more.",
     "aboutHeading": "Fast fridge repair to protect your food"
@@ -613,7 +612,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/services/washer.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need washing machine repair in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need washing machine repair in Vizag.",
     "cardTitle": "Washing machines",
     "cardText": "Get laundry day moving again with careful, capable repairs.",
     "aboutHeading": "Doorstep washing machine repair you can rely on"
@@ -637,7 +636,7 @@ export const SERVICES: Service[] = [
     "alt": "RO water purifier with filters – RO service in Vizag",
     "about": [
       "An RO water purifier only works as well as its filters. Over time sediment and carbon filters get choked and the RO membrane loses efficiency – especially where the incoming water is hard or has high dissolved solids. The purifier may still run, but water flow drops and taste changes.",
-      "RK Cool Tech Services checks pump pressure, filters, membrane, UV lamp, float valve and solenoid valve to keep your purifier working properly. We also install new purifiers on the wall with correct inlet and drain connections, and fix leaks that can damage kitchen cabinets."
+      "AC Service Vizag checks pump pressure, filters, membrane, UV lamp, float valve and solenoid valve to keep your purifier working properly. We also install new purifiers on the wall with correct inlet and drain connections, and fix leaks that can damage kitchen cabinets."
     ],
     "offers": [
       {
@@ -714,7 +713,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/services/ro.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need RO water purifier service in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need RO water purifier service in Vizag.",
     "cardTitle": "RO water purifiers",
     "cardText": "Keep clean water flowing with dependable purifier care.",
     "aboutHeading": "Keep your drinking water safe and fresh"
@@ -815,7 +814,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/services/geyser.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need geyser repair in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need geyser repair in Vizag.",
     "cardTitle": "Geysers",
     "cardText": "Restore dependable hot water with a safe, timely repair.",
     "aboutHeading": "Safe, careful geyser repair"
@@ -917,7 +916,7 @@ export const SERVICES: Service[] = [
       }
     ],
     "image": "/images/services/electrical.webp",
-    "waMessage": "Hi RK Cool Tech Services, I need an electrician in Vizag.",
+    "waMessage": "Hi AC Service Vizag, I need an electrician in Vizag.",
     "cardTitle": "Electrical works",
     "cardText": "Thoughtful home electrical work, completed with care.",
     "aboutHeading": "Safe electrical work for homes and shops"
@@ -926,12 +925,12 @@ export const SERVICES: Service[] = [
 
 export const HOME_FAQS: Faq[] = [
   {
-    "q": "What services does RK Cool Tech Services offer in Vizag?",
+    "q": "What services does AC Service Vizag offer in Vizag?",
     "a": "We offer AC repair, AC installation, AC gas filling and general service, refrigerator repair, washing machine repair, RO water purifier service, geyser repair and home electrical services in Visakhapatnam."
   },
   {
     "q": "Which areas of Visakhapatnam do you cover?",
-    "a": "Our main service areas are NAD Junction, Pendurthi, Vepagunta, RTC Complex and Gajuwaka. We also serve the rest of Vizag city and nearby localities. Call or WhatsApp to confirm your area."
+    "a": "Our main location is RTC Complex, Dwaraka Nagar, Visakhapatnam. From there we serve NAD Junction, Gajuwaka, Pendurthi, Vepagunta and the rest of Vizag city and nearby localities. Call or WhatsApp to confirm your area."
   },
   {
     "q": "How do I book a service?",

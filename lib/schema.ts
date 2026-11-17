@@ -1,5 +1,5 @@
 import { AREAS, PRIMARY_AREAS, SERVICES } from "./content";
-import { BUSINESS, absoluteUrl, servicePath } from "./site";
+import { BUSINESS, MAPS_HREF, absoluteUrl, servicePath } from "./site";
 import type { Faq, Service } from "./types";
 
 const BUSINESS_ID = absoluteUrl("/#business");
@@ -15,10 +15,12 @@ export function businessNode() {
       "AC repair, AC installation, AC gas filling, refrigerator, washing machine, RO water purifier, geyser and electrical services in Visakhapatnam (Vizag), Andhra Pradesh.",
     url: absoluteUrl("/"),
     telephone: BUSINESS.tel,
-    logo: absoluteUrl("/images/rk-logo.png"),
+    hasMap: MAPS_HREF,
+    logo: absoluteUrl("/images/logo.png"),
     image: absoluteUrl("/images/rk-hero.jpg"),
     address: {
       "@type": "PostalAddress",
+      streetAddress: BUSINESS.street,
       addressLocality: BUSINESS.city,
       addressRegion: BUSINESS.region,
       addressCountry: BUSINESS.country,
@@ -55,7 +57,7 @@ export function homeGraph(faqs: Faq[]) {
     "@graph": [
       businessNode(),
       { "@type": "WebSite", "@id": `${home}#website`, url: home, name: BUSINESS.name, inLanguage: "en-IN", publisher: { "@id": BUSINESS_ID } },
-      { "@type": "WebPage", "@id": `${home}#webpage`, url: home, name: "RK Cool Tech Services | AC Repair & Appliance Service in Vizag", isPartOf: { "@id": `${home}#website` }, about: { "@id": BUSINESS_ID }, inLanguage: "en-IN" },
+      { "@type": "WebPage", "@id": `${home}#webpage`, url: home, name: "AC Service Vizag | AC Repair & Electrical Repairs in Vizag", isPartOf: { "@id": `${home}#website` }, about: { "@id": BUSINESS_ID }, inLanguage: "en-IN" },
       faqNode(faqs, home),
     ],
   };
