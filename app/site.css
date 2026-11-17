@@ -643,3 +643,10 @@
   .main-nav { gap: 15px; }
   .site-header .header-whatsapp { display: none; } /* floating WhatsApp button covers it */
 }
+
+/* Logo always on pure white */
+.site-header { background: #fff; backdrop-filter: none; }
+.brand-lockup { background: #fff; }
+.footer-brand > a { padding: 12px 18px; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px rgb(0 0 0 / .18); }
+.about-stamp { background: #fff; }
+.intro-strip__mark { background: #fff; border-radius: 50%; }
