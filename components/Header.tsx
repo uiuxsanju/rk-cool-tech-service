@@ -72,7 +72,7 @@ export function Header() {
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <div className="site-header__inner">
           <Link className="brand-lockup" href="/" aria-label="AC Service Vizag home" onClick={close}>
-            <Image src="/images/logo.webp" alt="AC Service Vizag – One Call for All Electrical Repairs" width={700} height={167} priority sizes="250px" />
+            <Image src="/images/logo.webp" alt="AC Service Vizag – One Call for All Electrical Repairs" width={700} height={167} priority sizes="300px" />
           </Link>
 
           <nav className={`main-nav${open ? " main-nav--open" : ""}`} aria-label="Main navigation">

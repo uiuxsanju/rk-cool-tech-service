@@ -11,7 +11,7 @@ export function Footer() {
       <div className="section-shell footer-main">
         <div className="footer-brand">
           <Link href="/" aria-label="AC Service Vizag home">
-            <Image src="/images/logo.webp" alt="AC Service Vizag logo" width={700} height={167} sizes="200px" />
+            <Image src="/images/logo.webp" alt="AC Service Vizag logo" width={700} height={167} sizes="240px" />
           </Link>
           <p>Professional AC repair, appliance repair, installation and electrical care for homes across Visakhapatnam (Vizag). Owner: {BUSINESS.owner}.</p>
           <span className="footer-tagline">ONE CALL FOR ALL ELECTRICAL REPAIRS.</span>

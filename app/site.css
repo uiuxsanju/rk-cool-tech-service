@@ -52,9 +52,9 @@
 
   .site-header { position: sticky; top: 0; z-index: 30; background: color-mix(in oklab, var(--site-white) 95%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--site-line) 68%, transparent); backdrop-filter: blur(16px); transition: box-shadow .2s; }
   .site-header.is-scrolled { box-shadow: 0 8px 24px color-mix(in oklab, var(--site-ink) 7%, transparent); }
-  .site-header__inner { display: grid; grid-template-columns: 255px minmax(0, 1fr) auto; align-items: center; gap: 28px; width: min(1240px, 100% - 64px); min-height: 88px; margin-inline: auto; }
+  .site-header__inner { display: grid; grid-template-columns: 300px minmax(0, 1fr) auto; align-items: center; gap: 28px; width: min(1240px, 100% - 64px); min-height: 88px; margin-inline: auto; }
   .brand-lockup { display: block; min-width: 0; }
-  .brand-lockup img { width: 250px; height: auto; display: block; }
+  .brand-lockup img { width: 300px; height: auto; display: block; }
   .main-nav { display: flex; justify-content: center; align-items: center; gap: clamp(17px, 2.3vw, 34px); }
   .main-nav a, .nav-dd > button { color: var(--site-copy); font-size: 14px; font-weight: 600; text-decoration: none; transition: color .18s; background: none; border: 0; cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 4px; padding: 0; }
   .main-nav a:hover, .main-nav a[aria-current="page"], .nav-dd > button:hover, .footer-column a:hover { color: var(--brand-blue); }
@@ -326,7 +326,7 @@
   .site-footer { background: var(--site-ink); color: var(--site-white); }
   .footer-main { display: grid; grid-template-columns: 1.4fr .8fr 1.1fr .9fr; gap: 46px; padding-block: 55px 48px; }
   .footer-brand > a { display: inline-block; padding: 8px 12px; background: var(--site-white); border-radius: 6px; }
-  .footer-brand img { width: 200px; height: auto; display: block; }
+  .footer-brand img { width: 240px; height: auto; display: block; }
   .footer-brand > p { max-width: 260px; margin: 15px 0; color: color-mix(in oklab, var(--site-white) 70%, transparent); font-size: 14px; line-height: 1.8; }
   .footer-tagline { color: color-mix(in oklab, var(--site-white) 82%, transparent); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
   .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -398,8 +398,8 @@
   .hero__trust-bar ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero__trust-bar li:nth-child(3) { border-left: 0; }
   .hero__trust-bar li:nth-child(n+3) { border-top: 1px solid var(--site-line); }
-  .site-header__inner { grid-template-columns: 185px minmax(0, 1fr) auto; gap: 14px; }
-  .brand-lockup img { width: 180px; }
+  .site-header__inner { grid-template-columns: 200px minmax(0, 1fr) auto; gap: 14px; }
+  .brand-lockup img { width: 200px; }
   .main-nav { gap: 15px; }
   .main-nav a, .nav-dd > button { font-size: 13px; }
   .header-call { display: none; }
@@ -419,7 +419,7 @@
   .hero__inner { grid-template-columns: 1fr; gap: 40px; padding-block: 40px 52px; }
   .hero__visual { max-width: 620px; }
   .site-header__inner { grid-template-columns: minmax(0, 1fr) auto; gap: 12px; width: calc(100% - 40px); min-height: 67px; position: relative; }
-  .brand-lockup img { width: 185px; }
+  .brand-lockup img { width: 205px; }
   .menu-toggle { display: inline-flex; }
   .header-whatsapp { width: 39px; height: 39px; padding: 0; }
   .header-whatsapp span { display: none; }
@@ -628,4 +628,18 @@
   .announcement__loc { font-size: 12px; }
   .main-loc strong { font-size: 17px; }
   .main-loc em { font-size: 12.5px; }
+}
+
+/* Header logo – mid-width laptops */
+@media (1000px < width <= 1240px) {
+  .site-header__inner { grid-template-columns: 240px minmax(0, 1fr) auto; gap: 18px; }
+  .brand-lockup img { width: 240px; }
+  .main-nav { gap: 18px; }
+  .main-nav a, .nav-dd > button { white-space: nowrap; }
+}
+@media (1000px < width <= 1180px) {
+  .site-header__inner { grid-template-columns: 220px minmax(0, 1fr) auto; }
+  .brand-lockup img { width: 220px; }
+  .main-nav { gap: 15px; }
+  .site-header .header-whatsapp { display: none; } /* floating WhatsApp button covers it */
 }
